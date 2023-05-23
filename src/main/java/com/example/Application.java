@@ -9,18 +9,14 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@SpringBootApplication(exclude=
-        {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+/**
+ * @author x
+ */
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class Application {
 
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
-    @RequestMapping(value = "/")
-    public String index() {
-        log.info("Application index Response: Hello Spring Boot");
-        return "Hello Spring Boot";
-    }
 
     public static void main(String[] args) {
 
